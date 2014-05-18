@@ -1,0 +1,17 @@
+pollutantmean <- function(directory, pollutant, id) {
+        files_list <- dir(directory, full.names = TRUE)
+        dat <- data.frame()
+        for(i in 1:332){
+                # loops through the files, rbinding them together
+                dat <- rbind(dat, read.csv(files_list[i]))
+        }
+        # remove the NA values
+        clean_dat <- na.omit(dat)
+        # creates variables pollutant and id 
+        pollutant <- vector("character", length = 1)
+        
+        for(i in id){
+                + x <- clean_dat[clean_dat[,"ID"] == i, ]
+                + value <- rbind(value, x)}
+        mean(valor[,pollutant])
+}
